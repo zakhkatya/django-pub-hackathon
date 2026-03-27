@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'ecp_auth',
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -176,3 +177,13 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
+
+
+AUTHENTICATION_BACKENDS = [
+    'ecp_auth.backends.ECPAuthenticationBackend',
+]
+
+ECP_AUTH = {
+    'NONCE_TTL_SECONDS': 300,
+    'AUTO_CREATE_USER': True,
+}

@@ -2,3 +2,6 @@ Django>=4.2
 psycopg2-binary
 gunicorn
 Jinja2
+cryptography >= 42.0
+asn1crypto >= 1.5
+django-ecp-signer == 0.1.1
